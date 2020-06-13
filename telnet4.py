@@ -7,13 +7,12 @@ password = getpass.getpass()
 
 f = open ('myswitches')
 
-for ip in f:
-    ip = ip.strip()
-    print ("Configuring Switch : " + (ip))
-    HOST = ip
+for IP in f:
+    IP = IP.strip()
+    print ("Configuring Switch : " + (IP))
+    HOST = IP
 
-    tn = telnetlib.Telnet(Host)
-
+    tn = telnetlib.Telnet(HOST)
     tn.read_until(b"Username: ")
     tn.write(user.encode('ascii') + b"\n")
     if password:
